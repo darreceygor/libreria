@@ -7,7 +7,9 @@
       <th>Autor</th>
       <th>Precio</th>
       <th>Stock</th>
+      <th>Cantidad</th>
       <th>Compra</th>
+
     </tr>
   </thead>
   <tbody>
@@ -22,6 +24,9 @@
       <td>
         <app-input-integer [(quantity)]="book.quantity" [max]="book.stock" *ngIf="book.stock" (maxReached)="maxReached($event)">
         </app-input-integer>
+      </td>
+      <td>
+        <button type="button" class="btn btn-info btn-sm">Comprar</button>
       </td>
     </tr>
    </tbody> 
