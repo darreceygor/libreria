@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BookListComponent } from './book-list/book-list.component';
@@ -24,6 +25,7 @@ import { InputIntegerComponent } from './input-integer/input-integer.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    HttpClientModule,
     
   ],
   providers: [],
