@@ -55,11 +55,10 @@ export class BookListComponent implements OnInit {
       quantity:0,
     },
 ];
-  cart: BookCartService;
-  
-  constructor() { 
-    this.cart = new BookCartService;
+    
+  constructor(private cart: BookCartService) { 
   }
+  
   ngOnInit(): void {
   }
 
