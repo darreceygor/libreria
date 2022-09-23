@@ -1,10 +1,11 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Book } from './book-list/Book';
 
-
 const URL = 'https://632cb14c519d17fb53b244ba.mockapi.io/books/books';
+
 
 @Injectable({
   providedIn: 'root'

@@ -7,3 +7,4 @@ export interface Book {
   clearance:boolean;
   quantity:number;
 }
+
