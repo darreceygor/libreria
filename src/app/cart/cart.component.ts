@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { observable } from 'rxjs';
-import { BookCartService } from '../book-cart.service';
 import { Book } from '../book-list/Book';
+import { BookCartService } from '../services/book-cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -13,7 +13,7 @@ export class CartComponent implements OnInit {
   cartList!: Book[];
 
   constructor(private cart:BookCartService) {
-    cart.cartList.subscribe(observable => this.cartList=observable);
+    cart.cartList.subscribe((observable: Book[]) => this.cartList=observable);
   }
 
   ngOnInit(): void {

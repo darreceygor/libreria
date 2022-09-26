@@ -1,8 +1,9 @@
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Book } from './book-list/Book';
+import { Observable, tap } from 'rxjs';
+import { Book } from '../book-list/Book';
+
 
 const URL = 'https://632cb14c519d17fb53b244ba.mockapi.io/books/books';
 
@@ -16,7 +17,8 @@ export class BookDataService {
   constructor(private http:HttpClient) { }
 
   public getAll(): Observable<Book[]>{
-    return this.http.get<Book[]>(URL); //tipar la devolucion del json
+    return this.http.get<Book[]>(URL);
+       //tipar la devolucion del json
   }
 
 }

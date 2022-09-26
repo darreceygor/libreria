@@ -6,5 +6,6 @@ export interface Book {
   image:string;
   clearance:boolean;
   quantity:number;
+  m:number;
 }
 

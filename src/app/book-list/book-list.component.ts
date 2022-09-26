@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { BookCartService } from '../book-cart.service';
-import { BookDataService } from '../book-data.service';
-import {Book} from './Book'
+import { BookCartService } from '../services/book-cart.service';
+import { BookDataService } from '../services/book-data.service';
+import { Book } from './Book';
+
 
 @Component({
   selector: 'app-book-list',
@@ -24,12 +25,11 @@ export class BookListComponent implements OnInit {
   }
 
 
-  addToCart (book: any): void {
+  addToCart (book: Book): void {
     this.cart.addToCart(book);
     book.stock = book.stock-book.quantity;
     book.quantity=0;
   }
-
 
   maxReached (m: string){
     alert (m);
