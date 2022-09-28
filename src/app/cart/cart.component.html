@@ -5,13 +5,17 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Cerveza</th>
+        <th>Imagen</th>
+        <th>Libro</th>
         <th>Cantidad</th>
         <th>Subtotal</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let book of cartList">
+        <td >
+          <img class="mini" src={{book.image}} alt="">
+          </td>
         <td>{{book.title}}</td>
         <td>{{book.quantity}}</td>
         <td>{{book.price*book.quantity}}</td>
