@@ -1,9 +1,28 @@
 <h1>Carrito de Compras</h1>
 
-<ul>
-  <li *ngFor="let book of cartList">
-    {{book.image}}{{book.title}}: {{book.quantity}} => {{book.m}}
-  </li>
-</ul>
 
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Cerveza</th>
+        <th>Cantidad</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of cartList">
+        <td>{{book.title}}</td>
+        <td>{{book.quantity}}</td>
+        <td>{{book.price*book.quantity}}</td>
+      </tr>
+    </tbody> 
+    <tr>
+      <td></td>
+      <td></td>
+      <td>TOTAL</td>
+      <td></td>
 
+    </tr>
+  </table>
+</div>

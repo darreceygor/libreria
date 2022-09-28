@@ -28,7 +28,9 @@ export class BookListComponent implements OnInit {
   addToCart (book: Book): void {
     this.cart.addToCart(book);
     book.stock = book.stock-book.quantity;
+    book.m=book.quantity*book.price;
     book.quantity=0;
+    
   }
 
   maxReached (m: string){

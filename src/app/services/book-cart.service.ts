@@ -27,10 +27,9 @@ export class BookCartService {
       this._cartList.push({...book}); //clona el objeto 
     } else {
       item.quantity+=book.quantity;
-      item.m=book.price*item.quantity;
     }
 
-    //decis al behavior que hay un cambio en la variable
+     //decis al behavior que hay un cambio en la variable
     this.cartList.next(this._cartList);
 
 
