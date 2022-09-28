@@ -14,9 +14,19 @@ export class CartComponent implements OnInit {
 
   constructor(private cart:BookCartService) {
     cart.cartList.subscribe((observable: Book[]) => this.cartList=observable);
+    console.log(this.cartList);
   }
 
   ngOnInit(): void {
+
   }
 
+  total():number{
+    let total=0
+
+    for (let i in this.cartList) {
+        total+=this.cartList[i].price*this.cartList[i].quantity;
+    }
+    return total;
+  }
 }

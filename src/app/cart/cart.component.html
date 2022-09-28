@@ -1,4 +1,4 @@
-<h1>Carrito de Compras</h1>
+<h3>Carrito de Compras</h3>
 
 
 <div class="container">
@@ -21,12 +21,11 @@
         <td>{{book.price*book.quantity}}</td>
       </tr>
     </tbody> 
-    <tr>
-      <td></td>
-      <td></td>
-      <td>TOTAL</td>
-      <td></td>
-
-    </tr>
   </table>
+
+  <div class="alert alert-dark" role="alert">El total de su compra es: 
+    <h2 class="badge bg-success">{{total() | currency}}</h2>
+  </div>
+
+
 </div>
