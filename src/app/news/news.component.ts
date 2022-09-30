@@ -18,7 +18,7 @@ export class NewsComponent implements OnInit {
     this.newsService.viewNews().subscribe((res)=>
     {
       console.log(res);
-      this.newsData=res.results;
+      this.newsData=res.articles;
   });
 }
 }
