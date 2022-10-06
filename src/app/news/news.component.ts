@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-import {NewsService} from '../services/news.service';
-=======
 import { NewsService } from '../services/news.service';
->>>>>>> 05533178a5601c59ac433bbba0484b764b81756f
+
 
 @Component({
   selector: 'app-news',
