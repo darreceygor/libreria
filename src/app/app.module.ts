@@ -12,6 +12,7 @@ import { BabiloniaBooksComponent } from './babilonia-books/babilonia-books.compo
 import { CartComponent } from './cart/cart.component';
 import { InputIntegerComponent } from './input-integer/input-integer.component';
 import { NewsComponent } from './news/news.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NewsComponent } from './news/news.component';
     BabiloniaBooksComponent,
     CartComponent,
     InputIntegerComponent,
-    NewsComponent
+    NewsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

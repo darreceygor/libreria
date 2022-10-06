@@ -1,0 +1,38 @@
+<div class="container">
+	<form  class="form" #form="ngForm" 
+    action="https://formspree.io/f/xjvzrdlq" method="POST">
+		<h3>Comentarios</h3>
+		<hr />
+		<label for="name"><b>Nombre</b></label>
+		<input
+            type="text" #name="ngModel" name="name" minlength="5"
+            placeholder="Introduzca su nombre:"class="form-control"
+            [(ngModel)]="register.name"            
+            [ngClass]="{'is-valid': !name.invalid, 'is-invalid': name.invalid}"
+          />
+    <br>
+		<label for="email"><b>Correo electrónico</b></label>
+		<input
+            type="email" #email="ngModel" name="email" 
+            placeholder="Introduzca la correo electrónico" class="form-control"
+                   
+            required
+            [(ngModel)]="register.email"
+            [ngClass]="{'is-valid': !email.invalid, 'is-invalid': email.invalid}"
+            pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+          />
+    <br>
+    <label for="area"><b>Nombre</b></label>
+    <textarea
+            type="text" #area="ngModel" name="area" minlength="5"
+            placeholder="Introduzca su nombre:"class="form-control"
+            [(ngModel)]="register.question">          
+    </textarea>
+    <br>
+	<div class="row">
+			<div class="col-lg">
+				<button type="submit" [disabled]="!form.valid" class="btn btn-primary btn-sm">Comentar</button>
+			</div>
+		</div>
+	</form>
+</div>
