@@ -1,4 +1,4 @@
-<h2> Listado de Libros</h2>
+<h2>Listado de Libros</h2>
 <table class="table">
   <thead>
     <tr>
@@ -6,29 +6,51 @@
       <th>Titulo</th>
       <th>Autor</th>
       <th>Precio</th>
-      <th>Stock</th>
+      <th class="row justify-content-center align-items-center">Stock</th>
       <th>Cantidad</th>
       <th>Compra</th>
-
     </tr>
   </thead>
   <tbody>
-
-    <tr *ngFor="let book of books" [ngClass]="{'clearance':book.clearance}">
-      <td><img width="90" class="img-thumbnail" [src]="book.image" [alt]="book.title" srcset=""></td>
-      <td>{{book.title}}</td>
-      <td>{{book.autor}}</td>
-      <td>{{book.price | currency}}</td>
+    <tr *ngFor="let book of books" [ngClass]="{ clearance: book.clearance }">
       <td>
-        <span class="badge bg-warning text-dark" *ngIf="book.stock==0">SIN STOCK</span>
+        <img
+          width="90"
+          class="img-thumbnail"
+          [src]="book.image"
+          [alt]="book.title"
+          srcset=""
+        />
+      </td>
+      <td>{{ book.title }}</td>
+      <td>{{ book.autor }}</td>
+      <td>{{ book.price | currency }}</td>
+      <td>
+        <div *ngIf="book.stock == 0; else elseBlock">
+          <span class="badge bg-warning text-dark" *ngIf="book.stock == 0"
+            >SIN STOCK</span
+          >
+        </div>
+        <ng-template #elseBlock>{{ book.stock }}</ng-template>
       </td>
       <td>
-        <app-input-integer [(quantity)]="book.quantity" [max]="book.stock" *ngIf="book.stock" (maxReached)="maxReached($event)">
+        <app-input-integer
+          [(quantity)]="book.quantity"
+          [max]="book.stock"
+          *ngIf="book.stock"
+          (maxReached)="maxReached($event)"
+        >
         </app-input-integer>
       </td>
       <td>
-        <button type="button" class="btn btn-info btn-sm"(click)="addToCart(book)">Comprar</button>
+        <button
+          type="button"
+          class="btn btn-info btn-sm"
+          (click)="addToCart(book)"
+        >
+          Comprar
+        </button>
       </td>
-
-   </tbody> 
+    </tr>
+  </tbody>
 </table>
