@@ -13,6 +13,8 @@ import { CartComponent } from './cart/cart.component';
 import { InputIntegerComponent } from './input-integer/input-integer.component';
 import { NewsComponent } from './news/news.component';
 import { ContactComponent } from './contact/contact.component';
+import { BabiloniaNewsComponent } from './babilonia-news/babilonia-news.component';
+import { NewsCategoryComponent } from './news-category/news-category.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { ContactComponent } from './contact/contact.component';
     CartComponent,
     InputIntegerComponent,
     NewsComponent,
-    ContactComponent
+    ContactComponent,
+    BabiloniaNewsComponent,
+    NewsCategoryComponent
   ],
   imports: [
     BrowserModule,
